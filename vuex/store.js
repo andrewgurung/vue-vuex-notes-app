@@ -10,6 +10,8 @@ const state = {
 }
 
 // define the possible mutations that can be applied to our state
+// Mutations MUST be synchronous
+// To make AJAX request, use 'actions' that are asynchronous by nature
 const mutations = {
     ADD_NOTE (state) {
         const newNote = {
