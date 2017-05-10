@@ -20,7 +20,7 @@ const mutations = {
         }
         // only mutators can mutate the state
         state.notes.push(newNote)
-        state.activeNote(newNote)
+        state.activeNote = newNote
     },
 
     EDIT_NOTE (state, text) {
@@ -45,6 +45,6 @@ const mutations = {
 // create the Vuex instance by combining the state and mutation objects
 // then export the Vuex store for use by our components
 export default new Vuex.Store({
-    state, 
+    state,
     mutations
 })
