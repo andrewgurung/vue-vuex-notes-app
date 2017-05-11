@@ -43,6 +43,11 @@
 import { updateActiveNote } from '../vuex/actions'
 
 export default {
+  data () {
+    return {
+      show: 'all'
+    }
+  },
   vuex: {
     getters: {
       notes: state => state.notes,
@@ -50,14 +55,14 @@ export default {
     },
     actions: {
       updateActiveNote
-    },
-    computed: {
-      filteredNotes() {
-        if(this.show === 'all') {
-          return this.notes
-        } else if (this.show === 'favorites') {
-          return this.notes.filter(note => note.favorite)
-        }
+    }
+  },
+  computed: {
+    filteredNotes () {
+      if (this.show === 'all'){
+        return this.notes
+      } else if (this.show === 'favorites') {
+        return this.notes.filter(note => note.favorite)
       }
     }
   }

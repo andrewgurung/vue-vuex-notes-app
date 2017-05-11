@@ -3,10 +3,17 @@
 
 // Mutations MUST be synchronous
 // To make AJAX request, we use 'actions' that are asynchronous by nature
+/*
 export const addNote = function (store) {
     var dispatch = store.dispatch
     dispatch('ADD_NOTE')
 }
+*/
+
+export const addNote = ({ dispatch }) => {
+  dispatch('ADD_NOTE')
+}
+
 
 // Shorthand using ES2015 argument destructuring
 export const editNote = ({ dispatch }, e) => {
